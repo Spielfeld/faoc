@@ -1,6 +1,6 @@
-# faoc
+# Advent of code in Flutter
 
-A new Flutter project.
+In welcher Sprache den dieses Jahr [Advent of code](https://adventofcode.com/)? Warum nicht als App - Um Flutter noch etwas besser kennen zu lernen.
 
 ## Getting Started
 
