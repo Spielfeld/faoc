@@ -1,67 +1,80 @@
 import 'package:flutter/material.dart';
 
+// void main() => runApp(const DayOverview());
 void main() {
-  runApp(const MyApp());
+  runApp(const DayOverview());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class DayOverview extends StatelessWidget {
+  const DayOverview({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const title = 'Advent Of Code 2022';
+
     return MaterialApp(
-      title: 'Advent of code 2022',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: const MyHomePage(title: 'Advent of code 2022'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      title: title,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(title),
+        ),
+        body: ListView(
+          children: const <Widget>[
+            Card(
+              child: ListTile(
+                title: Text('Day 03'),
+                subtitle: Text('@@#@@##@@#@@@@#@@@@@@@#@@#@@#@##@@@@#@@#@@@#@#@@@'),
+                isThreeLine: false,
+                // dense: true,
+                enabled: false,
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Card(
+              child: ListTile(
+                title: Text('Day 02'),
+                subtitle: Text('@@@@@#@@@@@#@@####@@@@@@@@@@@@@@@##@@@@@@@#@@#@@@'),
+                isThreeLine: false,
+                // dense: true,
+                enabled: false,
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text('Day 01'),
+                subtitle: Text('#@@@#@@###@@#@@@@#@@#@@##@#@@@#@@@@@#@@#@#@@@#@##'),
+                isThreeLine: false,
+                // dense: true,
+                enabled: false,
+              ),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
     );
   }
 }
+// #@@@#@@###@@#@@@@#@@#@@##@#@@@#@@@@@#@@#@#@@@#@##
+// @@@@@#@@@@@#@@####@@@@@@@@@@@@@@@##@@@@@@@#@@#@@@
+// @@#@@##@@#@@@@#@@@@@@@#@@#@@#@##@@@@#@@#@@@#@#@@@
+// #@@@#@@@@@#@@@@@@@@@#@#@@@@@#@@#@#@@@@@@@@@@##@@@
+// @@@@#@@@@@@#@#@@@#@@@@@#@#@#@##@#@@@##@####@#@@@#
+// @@@###@@##@@#@@@@@@@@###@#@@@###@#@@#@@@##@@###@@
+// #@#@@#@@@@@@@##@#@##@@@####@#@@##@@###@@@@#@@@@@#
+// #@@#@#@@@##@@@##@@#@@@@@@@@@@@@#@@@#@@@@@@@@###@@
+// @##@@#@@#@@@@@@@@@@@@#@@##@@@@@@@#@###@@@@##@@@@@
+// @###@@@@@@@@@##@@###@@@##@@@@@#@@#@@##@@@@@#@#@@@
+// ##@##@#@@@@@@#@@@#@#@@@#@@@@@@@#@@@#@###@@#@#@@@@
+// @##@##@@##@@@@@#@@@#@#@@@#@#@@@@##@@@@@@@##@@@@##
+// @@@@#@@@@@#@@@#@#@@@@@#@@@@##@@@@@@@@#@@##@@@##@@
+// @#@@@@@@####@@#@@##@@@#@@@@@#@@@@@@@@@@@@@@@##@@#
+// @##@@@@@@@#@@#@@#@@#@#@@#@@@@###@@@#@@@@#@@@@@@@@
+// #@@@@@#@@@@@@@#@@@@@@#@#@@@@#@@@@@##|@@@@##@#@@##
+// @@@@@@@@@@#@@@@@#@#@@#@@@@@##@#@@#@@@@###@#@##@#@
+// #@@#@@@@#@@@#@@@@#@@@@@@@#@###@#@@@@@@#@@@@@#@@@@
+// ###@@#@#@@@@#@@@@#@#@@#@@@@@##@#@@@@@@@#@@#@@@@@#
+// @@#@@@@###@@@@@@#@@@@@#@#@#@@@@@@#@@#@###@##@##@@
+// @@@#@@#@@#@#@@@@@@#@##@@###@@#@@@@@#@@@@@##@@#@@@
+// @@@#@#@@@##@#@####@@@@@@@#@@@@@#@@@@#@#@@@#@@#@##
+// @@@@@@#@@#@@@#@@#@##@@#@#@@@@#@#@@@@@@@@@@@@@#@@#
+// #@#@#@#@@@##@@##@@#@@@@@@@#@@@@##@@##|@#@@@#@@#@@
+// #@@@#@@@@@@@#@@@@@#@@###@##@@@#@@##@#@@@@@#@@@@#@
