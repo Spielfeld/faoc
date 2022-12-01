@@ -20,6 +20,7 @@ void main() {
       10000
       """;
       expect(24000, Day1aae(example));
+      expect(45000, Day1bae(example));
   });
 
   test("input ae", () {
@@ -2279,5 +2280,6 @@ void main() {
 1807
       """;
       expect(70698, Day1aae(example));
+      expect(70698, Day1bae(example));
   });
 }
