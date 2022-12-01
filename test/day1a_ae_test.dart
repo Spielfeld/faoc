@@ -2278,6 +2278,6 @@ void main() {
 6030
 1807
       """;
-      expect(24000, Day1aae(example));
+      expect(70698, Day1aae(example));
   });
 }
