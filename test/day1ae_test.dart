@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:faoc/day1aae.dart';
+import 'package:faoc/day1ae.dart';
 
 void main() {
   test("example code", () {
@@ -2280,6 +2280,6 @@ void main() {
 1807
       """;
       expect(70698, Day1aae(example));
-      expect(70698, Day1bae(example));
+      expect(206643, Day1bae(example));
   });
 }
