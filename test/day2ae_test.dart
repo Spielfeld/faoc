@@ -2515,6 +2515,6 @@ A Z
 A Y
 C Y""";
     expect(9759, Day2aae(example));
-    expect(0, Day2bae(example));
+    expect(12429, Day2bae(example));
   });
 }
