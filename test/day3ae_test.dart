@@ -12,6 +12,7 @@ void main() {
     CrZsJsPPZsGzwwsLwLmpwMDw
     """;
     expect(157, Day3aae(example));
+    expect(70, Day3bae(example));
   });
 
   test("Day 3 real input", () {
@@ -318,5 +319,6 @@ rcrvjpSvScbRbBvbDBPG
 ZZJzSHpzPrJzHFmMVMFmHCLNtV
     """;
     expect(7831, Day3aae(example));
+    expect(2683, Day3bae(example));
   });
 }

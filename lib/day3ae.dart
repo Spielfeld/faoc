@@ -10,7 +10,40 @@ a-z 1-26
 A-Z 27-52
 Buchstaben in beiden Fächern zählen.
 
+Aufgabe 2
+
+Die Elfen werden in 3er Gruppen soriert.
+
+Jeder hat ein Abzeichen. Das muss in jeder Gruppe existieren.
+
 */
+
+class ElfenGruppe {
+  Rucksack a = Rucksack("");
+  Rucksack b = Rucksack("");
+  Rucksack c = Rucksack("");
+
+  ElfenGruppe(Rucksack a, Rucksack b, Rucksack c) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  }
+
+  String findBadge() {
+    var a_inhalt = this.a.inhalt;
+    for (var i = 0; i < a_inhalt.length; i++) {
+      var current = a_inhalt[i];
+      if (this.b.inhalt.contains(current) && this.c.inhalt.contains(current)) {
+        return current;
+      }
+    }
+    return "";
+  }
+
+  int badgePriority() {
+    return this.a.getPriority(this.findBadge());
+  }
+}
 
 class Rucksack {
   String inhalt = "";
@@ -51,6 +84,22 @@ int Day3aae(String input) {
   for (var i = 0; i < all.length; i++) {
     Rucksack cur = Rucksack(all[i].trim());
     result += cur.findDoubled();
+  }
+  return result;
+}
+
+int Day3bae(String input) {
+  List<String> all = input.trim().split("\n");
+  int result = 0;
+  List<Rucksack> leute = [];
+  for (var i = 0; i < all.length; i++) {
+    Rucksack cur = Rucksack(all[i].trim());
+    leute.add(cur);
+    if (leute.length == 3) {
+      ElfenGruppe g = ElfenGruppe(leute[0], leute[1], leute[2]);
+      result += g.badgePriority();
+      leute = [];
+    }
   }
   return result;
 }
